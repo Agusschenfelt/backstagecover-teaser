@@ -180,7 +180,8 @@ export default function App() {
       className="bg-white overflow-hidden relative h-[100svh] md:h-[100dvh] flex items-center justify-center"
       style={{ touchAction: "manipulation" }}
     >
-      <div className="flex flex-col sm:flex-row items-center justify-center gap-10 sm:gap-14">
+      <div className="flex flex-col sm:flex-row items-center justify-center gap-10 sm:gap-14 pb-28 sm:pb-0"
+            style={{ paddingBottom: "max(112px, calc(env(safe-area-inset-bottom, 0px) + 112px))" }}>
         {tracks.map((t) => {
           const active = current === t.id;
           const isHover = hovered === t.id;
@@ -215,6 +216,25 @@ export default function App() {
           );
         })}
       </div>
+
+      <a
+        href="https://spotify.link/8z4MUHAOOXb"
+        target="_blank"
+        rel="noreferrer"
+        className="
+          absolute left-1/2 -translate-x-1/2
+          px-10 py-4 sm:px-14 sm:py-5
+          bg-[#7627b9] hover:bg-[#8b3be0]
+          text-white text-xl sm:text-2xl font-semibold tracking-wider
+          rounded-full shadow-[0_0_25px_rgba(118,39,185,0.5)]
+          transition-all duration-300 ease-out
+          hover:scale-105 active:scale-95
+        "
+        style={{ bottom: "calc(env(safe-area-inset-bottom, 0px) + 50px)" }}
+      >
+        PRESAVE
+      </a>
+
 
       {/* firma / link */}
       <a
